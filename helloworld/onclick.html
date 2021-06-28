@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1 id="app">
+    <button @click="clickAction('asjdkj',$event)">button1</button>
+    <button>button2</button>
+    <button>button3</button>
+</h1>
+
+
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el:"#app",
+        data:{
+            moives:['a','b','c']
+        },
+        methods:{
+            clickAction:function (abc,event) {
+                console.log(abc+event)
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
