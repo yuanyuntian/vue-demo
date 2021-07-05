@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <label for='aggress'>
+    <input type="checkbox" id="aggress" value="同意协议" v-model="isAggress">同意协议
+  </label>
+  <h2>您选择的是:{{isAggress}}</h2>
+  <button v-bind:disabled="!isAggress">下一步</button>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el:"#app",
+    data:{
+      message:'您好',
+      isAggress:false
+    }
+  })
+</script>
+</body>
+</html>
