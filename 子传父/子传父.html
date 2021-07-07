@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <cpn v-on:clickaction="actionevent"></cpn>
+</div>
+<template id="cpn">
+  <div>
+    <button v-for="item in categories" v-on:click="clickItem(item)">{{item.name}}</button>
+  </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+
+  const cpn = {
+    template:'#cpn',
+    data() {
+      return {
+        categories: [
+          {id:123123,name:'aksjdaksjdh'},
+          {id:90,name:'123'},
+          {id:123,name:'sdfsdfsdf'}
+        ]
+      }
+    },
+    methods:{
+      clickItem(item) {
+        this.$emit('clickaction',item)
+      }
+    }
+  }
+
+  const app = new Vue({
+    el:"#app",
+    data:{
+      // message:'信息',
+      movices:['数据结构','线性代数','复变函数']
+    },
+    components:{
+      cpn
+    },
+    methods: {
+      actionevent(item) {
+        console.log(item)
+      }
+    }
+  })
+</script>
+</body>
+</html>
